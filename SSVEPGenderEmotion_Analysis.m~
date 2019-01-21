@@ -422,7 +422,7 @@ electrodesAll=find(elec_post_ind);
 %%
 % Subjs_cond=[2:2:22]
 % Subjs_cond=[1:2:22];
-Subjs_cond=[20]
+Subjs_cond=[2:2:22]
 figure,
  for perm=1:6 
      hz_intermod=intermod(Perm(perm,:)',[1 20]);
@@ -526,7 +526,7 @@ for sub=1:subCounter
             %             SNR_temp_band{intermodul}(sub,perm,:)=squeeze(nanmean(PERM_powspctrm(sub,perm,:,[whichNegIdx whichPosIdx]),4));
             
             %
-            SNR_IMeye{intermodul}(sub,perm,:)=SNR_tempZ;%whichFreqSignal;%SNR_temp;%whichFreqSignal;%
+            SNR_IMeye{intermodul}(sub,perm,:)=whichFreqSignal;%SNR_temp;%whichFreqSignal;%
             
         end
     end
@@ -652,8 +652,8 @@ electrodesMid=find(elec_postMid_ind);
 whichMeasure=COND_IM;
 perm=1:6;
 whichSubs=[1:22]
-outliers=[12 13 ]
- whichSubs(ismember(whichSubs(:),outliers(:)))=[];
+outliers=[12 13 19 20]
+ (ismember(whichSubs(:),outliers(:)))=[];
 
 Taggs=Perm(perm,:)
 left_eye=[1 4 ]
